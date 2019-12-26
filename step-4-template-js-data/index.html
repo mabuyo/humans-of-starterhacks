@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Material Icons CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Humans of StarterHacks</title>
+</head>
+
+<body>
+  <script id="card-template" type="text/x-handlebars-template">
+    <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+      {{#each people}}
+        <div class="col mb-3">
+          <div class="card h-100">
+            <div>
+              <img src={{image_link}} class="card-img-top w-50" alt="Avatar for Michelle" />
+              <span class="badge badge-pill badge-{{stream}} float-right mt-2 mr-2 text-uppercase">{{stream}}</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">{{name}}</h3>
+              <h5 class="text-capitalize">{{role}}</h5>
+              <p class="card-text">
+              {{description}}
+              </p>
+            </div>
+            <div class="text-right">
+              <button class="btn fave-btn"><i class="material-icons">
+                  star_border
+                </i></button>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </script>
+  <div class="page-container">
+    <div class="sidebar">
+      <img src="img/sidebar-logo.svg" class="w-100" alt="Illustration of 4 people taking a group selfie" />
+      <h1 class="p-3">Humans of StarterHacks</h1>
+      <input type="text" placeholder="Search by name..." class="form-control" />
+    </div>
+    <div class="main-content pl-4 pr-4 pt-4">
+      <div id="target" />
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <!-- Handlebars -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <!-- Custom JS -->
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+}
+
+.page-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  /* for layout */
+  width: 350px;
+  height: 100%;
+  overflow: hidden;
+
+  /* for styling */
+  padding: 1em;
+  text-align: center;
+  border-right: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.badge-development {
+  background-color: #EC1B69;
+  color: white;
+}
+
+.badge-design {
+  background-color: #3B56A5;
+  color: white;
+}
+
+.badge-business {
+  background-color: #82C94B;
+  color: white;
+}
+
+.fave-btn:hover {
+  color: #F1C91C;
+}
