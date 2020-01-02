@@ -77,3 +77,53 @@ const updatePersonInDatabase = (recordId, fields) => {
       replaceHTMLCardTemplate();
     });
 };
+
+const addPersonToDatabase = person => {
+  const url =
+    "https://api.airtable.com/v0/appbCjCrgXZtlpR5L/HumansOfStarterHacks";
+
+  const key = "keykNUh12C5UP5SNh";
+
+  const body = { fields: person };
+
+  const options = {
+    headers: {
+      Authorization: `Bearer ${key}`,
+      "Content-Type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify(body)
+  };
+
+  fetch(url, options)
+    .then(result => result.json())
+    .then(result => {
+      const newPerson = { recordId: result.id, ...result.fields };
+      peopleData.push(newPerson);
+      replaceHTMLCardTemplate();
+    });
+};
+
+document
+  .getElementById("add-person-submit-btn")
+  .addEventListener("click", () => {
+    const form = document.getElementById("add-person-form");
+    const isValid = form.checkValidity();
+
+    if (!isValid) {
+      form.classList.add("was-validated");
+    } else {
+      const formData = new FormData(form);
+      let person = {};
+
+      for (var [key, value] of formData.entries()) {
+        person[key] = value;
+      }
+
+      addPersonToDatabase(person);
+
+      $("#add-person-modal").modal("hide");
+      form.reset();
+      form.classList.remove("was-validated");
+    }
+  });
