@@ -13,7 +13,7 @@ Add a button to fave a person.
 1. Create a function called `initializeFaveBtnClickListeners`. Call it after it's defined.
 
    ```js
-   const initializeFaveBtnClickListeners = () => {};
+   function initializeFaveBtnClickListeners() {}
 
    initializeFaveBtnClickListeners();
    ```
@@ -21,22 +21,22 @@ Add a button to fave a person.
 1. Get all of the fave buttons by class name.
 
    ```js
-   const initializeFaveBtnClickListeners = () => {
-     const faveBtns = document.getElementsByClassName("fave-btn");
-   };
+   function initializeFaveBtnClickListeners() {
+     let faveBtns = document.getElementsByClassName('fave-btn');
+   }
    ```
 
 1. Iterate through the buttons and add a click listener.
 
    ```js
-   const initializeFaveBtnClickListeners = () => {
-     const faveBtns = document.getElementsByClassName("fave-btn");
+   function initializeFaveBtnClickListeners() {
+     let faveBtns = document.getElementsByClassName('fave-btn');
      Array.from(faveBtns).forEach(btn => {
-       btn.addEventListener("click", () => {
+       btn.addEventListener('click', function() {
          // do something
        });
      });
-   };
+   }
    ```
 
 1. We need to get the id of the person that was clicked so we can update their `is_favourite` flag. To do this, give a `data-pid` attribute to the HTML element. Access that through the `dataset` attribute in JS.
@@ -48,31 +48,29 @@ Add a button to fave a person.
    ```
 
    ```js
-   btn.addEventListener("click", () => {
-     const id = parseInt(btn.dataset.pid);
+   btn.addEventListener('click', function() {
+     let id = parseInt(btn.dataset.pid);
    });
    ```
 
 1. Set up a separate function for toggling the `is_favourite` flag for the person and call it with the id grabbed from the previous step.
 
    ```js
+   function toggleIsFavourite(id) {
+    console.log("is_favourite button clicked for: " + id);
 
-   const toggleIsFavourite = id => {
-     console.log("is_favourite button clicked for: " + id);
+    // find the person we want to update in our array by using the id
+    let person = people.find(function(person) {
+      return person.id === id;
+    });
 
-     // find the person we want to update in our array using the id
-     let person = peopleData.find(p => p.id === id);
-
-     // update that person's `is_favourite` flag by toggling it
-     const updatedPerson = { ...person, is_favourite: !person.is_favourite };
-
-     // update the array
-     peopleData = peopleData.map(p => (p.id === id ? updatedPerson : p));
+    // update that person's is_favourite property (toggle it)
+    person.is_favourite = !person.is_favourite;
    }
 
    ...
 
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", function() {
      const id = parseInt(btn.dataset.pid);
 
      toggleIsFavourite(id);
@@ -87,7 +85,7 @@ Add a button to fave a person.
    Either remember to call `initializeFaveBtnClickListeners()` after `replaceHTMLCardTemplate()`, or add the `initializeFaveBtnClickListeners()` call inside the `replaceHTMLCardTemplate` function. Let's use the second one.
 
    ```js
-   const replaceHTMLCardTemplate = () => {
+   function replaceHTMLCardTemplate() {
      ...
      document.getElementById("target").innerHTML = html;
 

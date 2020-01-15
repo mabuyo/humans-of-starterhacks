@@ -16,7 +16,7 @@ Use Handlebars.js to create a template for the Card component. Use Javascript fo
    <script src="index.js"></script>
    ```
 
-1. In your `index.js` file, create a variable called `peopleData`. This will be an array of objects, where each object is a person. A person has an id, name, role, stream, description, image_link and is_favourite boolean flag. Add at least 3 people!
+1. In your `index.js` file, create a variable called `people`. This will be an array of objects, where each object is a person. A person has an id, name, role, stream, description, image_link and is_favourite boolean flag. Add at least 3 people!
 
    You can use [robohash.org](https://robohash.org/) for placeholder avatars as your image_link.
 
@@ -25,7 +25,7 @@ Use Handlebars.js to create a template for the Card component. Use Javascript fo
    Keep the role and stream lowercase, we will style with capitalization in the code later.
 
    ```js
-   let peopleData = [
+   let people = [
      {
        id: 1,
        name: "Michelle Mabuyo",
@@ -117,30 +117,30 @@ We want to change all the hardcoded values in our card to variables for the temp
 
    ```js
    // grab the source template from the HTML
-   var source = document.getElementById("card-template").innerHTML;
+   let source = document.getElementById('card-template').innerHTML;
 
    // use Handlebars to compile the template
-   var template = Handlebars.compile(source);
+   let template = Handlebars.compile(source);
 
    // grab the context (data) from the mock data in the first step. we'll use the first person in the array for now.
-   var context = peopleData[0];
+   let context = people[0];
 
    // apply the context / data to the template
-   var html = template(context);
+   let html = template(context);
 
    // inject the html with the data we want into our target `div` container
-   document.getElementById("target").innerHTML = html;
+   document.getElementById('target').innerHTML = html;
    ```
 
 1. To keep our code clean, put the code from the previous step in a function called `replaceHTMLCardTemplate`. Call it after it's declared.
 
    ```js
    const replaceHTMLCardTemplate = () => {
-     var source = document.getElementById("card-template").innerHTML;
-     var template = Handlebars.compile(source);
-     var context = peopleData[0];
-     var html = template(context);
-     document.getElementById("target").innerHTML = html;
+     let source = document.getElementById('card-template').innerHTML;
+     let template = Handlebars.compile(source);
+     let context = people[0];
+     let html = template(context);
+     document.getElementById('target').innerHTML = html;
    };
 
    replaceHTMLCardTemplate();
@@ -181,15 +181,15 @@ Time to make use of the template with multiple cards using the Handlebars `#each
    </script>
    ```
 
-1. In your `index.js` file, change the context to be an array of people. Context takes in an object with keys and values. In our template, we are expecting a key for `people` set to an array of objects with information such as name, role, stream, etc, aka our `peopleData` variable.
+1. In your `index.js` file, change the context to be an array of people. Context takes in an object with keys and values. In our template, we are expecting a key for `people` set to an array of objects with information such as name, role, stream, etc, aka our `people` variable.
 
    ```js
    const replaceHTMLCardTemplate = () => {
-     var source = document.getElementById("card-template").innerHTML;
-     var template = Handlebars.compile(source);
-     var context = { people: peopleData };
-     var html = template(context);
-     document.getElementById("target").innerHTML = html;
+     let source = document.getElementById('card-template').innerHTML;
+     let template = Handlebars.compile(source);
+     let context = { people: people };
+     let html = template(context);
+     document.getElementById('target').innerHTML = html;
    };
    ```
 

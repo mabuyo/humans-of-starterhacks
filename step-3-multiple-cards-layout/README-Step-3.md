@@ -12,10 +12,10 @@ With the template for one card done, let's create more cards and style the layou
 
 Let's use the [Grid Cards layout from Bootstrap](https://getbootstrap.com/docs/4.4/components/card/#grid-cards).
 
-1. Wrap the `div.card` component in a `div` container with class `row row-cols-sm-1 row-cols-md-3 row-cols-lg-4`. This means we want 4 columns when the screen size is large, 3 when the screen size is medium, and 1 column when the screen size is small. Bootstrap takes care of these breakpoints.
+1. Wrap the `div.card` component in a `div` container with class `row row-cols-1 row-cols-md-2 row-cols-lg-4`. This means we want 4 columns when the screen size is large, 2 when the screen size is medium, and 1 column when the screen size is small. Bootstrap takes care of these breakpoints.
 
    ```html
-   <div class="row row-cols-2 row-cols-lg-4">
+   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
      <div class="card" style="width: 18rem;">
        ...
      </div>

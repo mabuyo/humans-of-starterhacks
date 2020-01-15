@@ -35,3 +35,21 @@ This project should give you a good starting point to hack together your Starter
 This project is split up into steps. Each step has its own folder for the code for each step and instructions. If you get lost during the workshop code-alongs, you can take a look at the relevant folder.
 
 Feel free to also use the code as a jumping off point for your own project!
+
+## Links
+
+- [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) for a front-end component library
+- [undraw.co](https://undraw.co/) for illustrations
+- [css.cool](css.cool) for CSS styles
+- [Bootstrap Starter Templates](https://startbootstrap.com/templates/) for quick page layouts
+- [CSS Tricks - Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) as a cheat sheet for how flexbox works
+- [Flex Zombies - Game](https://mastery.games/p/flexbox-zombies) as a fun way to learn flexbox
+- [Bootstrap - Card Component](https://getbootstrap.com/docs/4.4/components/card/)
+- [Avataaars](https://getavataaars.com/) for an avatar representation
+- [Badge Bootstrap Component](https://getbootstrap.com/docs/4.4/components/badge/)
+- [Material Icons](https://material.io/resources/icons/)
+- [Bootstrap - Grid Cards Layout](https://getbootstrap.com/docs/4.4/components/card/#grid-cards)
+- [Bootstrap - Utilities (Spacing)](https://getbootstrap.com/docs/4.4/utilities/spacing/)
+- [Robohash.org](https://robohash.org/) for placeholder avatars
+- [Handlebars](https://handlebarsjs.com/) Installation - `<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>`
+-
