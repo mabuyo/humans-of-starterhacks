@@ -17,7 +17,7 @@ _Add gif_
 - [Bootstrap](https://getbootstrap.com/)
 - [Material Icons](https://material.io/resources/icons/)
 - Javascript
-- [Handlebars](https://handlebarsjs.com/])
+- [Handlebars](https://handlebarsjs.com/)
 - [Airtable](https://airtable.com/) Database & API
 
 First, we use HTML, CSS and Bootstrap create a simple static website. Then, we augment it with some Javascript for interactivity. We use Handlebars as a templating language. Finally, we use Airtable as our database and API to save and update our data.
@@ -52,4 +52,3 @@ Feel free to also use the code as a jumping off point for your own project!
 - [Bootstrap - Utilities (Spacing)](https://getbootstrap.com/docs/4.4/utilities/spacing/)
 - [Robohash.org](https://robohash.org/) for placeholder avatars
 - [Handlebars](https://handlebarsjs.com/) Installation - `<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>`
--
